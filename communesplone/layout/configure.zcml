@@ -8,5 +8,6 @@
   <five:registerPackage package="." initialize=".initialize" />
   <include file="skins.zcml" />
   <include file="profiles.zcml" />
+  <i18n:registerTranslations directory="locales" />
 
 </configure>
