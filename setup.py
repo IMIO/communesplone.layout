@@ -1,19 +1,24 @@
 from setuptools import setup, find_packages
-import os
 
 version = '4'
+
+long_description = (
+    open('README.txt').read()
+    + '\n' +
+    open('CHANGES.rst').read()
+    + '\n')
 
 setup(name='communesplone.layout',
       version=version,
       description="General layout adaptations",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
+        "Environment :: Web Environment",
         "Framework :: Plone",
         "Programming Language :: Python",
-        ],
+      ],
       keywords='',
       author='CommunesPlone.org',
       author_email='support@communesplone.be',

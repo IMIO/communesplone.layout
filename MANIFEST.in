@@ -1,2 +1,3 @@
 recursive-include communesplone *
+include *
 global-exclude *pyc
