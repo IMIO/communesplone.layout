@@ -1,0 +1,4 @@
+
+#fieldsetlegend-categorization, #fieldsetlegend-dates, #fieldsetlegend-creators, #fieldsetlegend-settings, #cmfeditions_version_comment_block {
+    display:none !important;
+}

@@ -4,11 +4,10 @@
     i18n_domain="communesplone.layout">
 
   <!-- File System Directory Views registration -->
-  <cmf:registerDirectory name="communesplone_layout"/>
+  <!--cmf:registerDirectory name="communesplone_layout"/-->
 
   <!-- Note: This could also be done for all folders at once
-       by replacing the previous lines with this one:
+       by replacing the previous lines with this one:-->
   <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
-  -->
 
 </configure>

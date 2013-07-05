@@ -11,12 +11,12 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <genericsetup:importStep
-      name="communesplone.layout.various"
-      title="communesplone.layout: miscellaneous import steps"
-      description="Various import steps that are not handled by GS import/export handlers."
-      handler="communesplone.layout.setuphandlers.setupVarious">
-    <depends name="skins"/>
-  </genericsetup:importStep>
+  <genericsetup:registerProfile
+      name="simplify"
+      title="communesplone.layout simplify"
+      directory="profiles/simplify"
+      description='Simplify editor layout.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
 </configure>

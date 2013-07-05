@@ -1,11 +1,31 @@
-def setupVarious(context):
+# -*- coding: utf-8 -*-
 
-    # Ordinarily, GenericSetup handlers check for the existence of XML files.
-    # Here, we are not parsing an XML file, but we use this text file as a
-    # flag to check that we actually meant for this import step to be run.
-    # The file is found in profiles/default.
+
+def setupVarious(context):
 
     if context.readDataFile('communesplone.layout_various.txt') is None:
         return
 
-    # Add additional setup code here
+
+def simplify(context):
+    """
+        Layout simplification
+    """
+    if context.readDataFile('communesplone.layout_simplify.txt') is None:
+        return
+
+    site = context.getSite()
+
+    # Add a full-layout group
+    groups_tool = site.portal_groups
+    group_id = "full-layout"
+    if not group_id in groups_tool.getGroupIds():
+        groups_tool.addGroup(group_id, title='Full edition layout')
+        groups_tool.addPrincipalToGroup('Administrators', "full-layout")
+        groups_tool.addPrincipalToGroup('Site Administrators', "full-layout")
+
+    # Clean user interface
+    site.manage_permission('Sharing page: Delegate roles', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
+    site.manage_permission('Modify view template', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
+    site.manage_permission('Review portal content', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
+    site.manage_permission('Modify constrain types', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
