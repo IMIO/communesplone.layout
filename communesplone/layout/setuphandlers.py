@@ -25,7 +25,9 @@ def simplify(context):
         groups_tool.addPrincipalToGroup('Site Administrators', "full-layout")
 
     # Clean user interface
-    site.manage_permission('Sharing page: Delegate roles', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
-    site.manage_permission('Modify view template', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
+    site.manage_permission('Sharing page: Delegate roles', ('Manager', 'Site Administrator', ), acquire=0)
+    site.manage_permission('Modify view template', ('Manager', 'Site Administrator', ), acquire=0)
     site.manage_permission('Review portal content', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
-    site.manage_permission('Modify constrain types', ('Manager', 'Site Administrator', 'Reviewer'), acquire=0)
+    site.manage_permission('Modify constrain types', ('Manager', 'Site Administrator', ), acquire=0)
+    site.manage_permission('CMFPlacefulWorkflow: Manage workflow policies', ('Manager', 'Site Administrator', ),
+                           acquire=0)
