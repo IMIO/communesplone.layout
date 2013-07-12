@@ -6,3 +6,7 @@
 #fieldsetlegend-categorization, #fieldsetlegend-dates, #fieldsetlegend-creators, #fieldsetlegend-settings, #cmfeditions_version_comment_block {
     display:none !important;
 }
+
+#form li.formTab:nth-child(n+2){
+    display:none !important;
+}
