@@ -26,10 +26,10 @@ setup(name='communesplone.layout',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'collective.captcha'
       ],
       entry_points="""
       # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,
