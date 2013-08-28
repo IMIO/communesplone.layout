@@ -20,3 +20,16 @@ msgstr ""
 msgid "no_source_users"
 msgstr "La connexion au site est momentanément suspendue pour raison de maintenance. Si besoin, vous pouvez <a href=\"contact-info\">contacter l'administrateur du site</a> pour plus d'informations."
 
+#. Default: "Provide the text in the image here above. Just to avoid spambots"
+#: ../skins/acptheme_cpskin3_custom_templates/sendto_form.cpt
+msgid "help_captcha"
+msgstr "Recopiez le texte de l'image ci-dessous, ceci permet de lutter contre le SPAM."
+
+#. Default: "Captcha"
+#: ../skins/acptheme_cpskin3_custom_templates/sendto_form.cpt
+msgid "label_captcha"
+msgstr "Code de vérification"
+
+#: ../skins/acptheme_cpskin3_custom_templates/validate_sendto.vpy:31
+msgid "Please provide the message here above correctly, case sensitive."
+msgstr "Recopiez les lettres et chiffres ci-dessous correctement en respectant la casse (majuscules/minuscules)."
