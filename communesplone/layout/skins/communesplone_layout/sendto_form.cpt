@@ -104,7 +104,7 @@
                 </textarea>
               </div>
 
-              <tal:comment replace='nothing'>XXX begin change by communesplone.layout, integrate captcha<tal:comment>
+              <tal:comment replace='nothing'>XXX begin change by communesplone.layout, integrate captcha</tal:comment>
               <div class="field"
                  i18n:domain="communesplone.layout"
                  tal:define="error errors/captcha|nothing;"
@@ -124,7 +124,7 @@
 
               <p tal:replace="structure here/@@captcha/image_tag" />
               </div>
-              <tal:comment replace='nothing'>XXX end change by communesplone.layout, integrate captcha<tal:comment>
+              <tal:comment replace='nothing'>XXX end change by communesplone.layout, integrate captcha</tal:comment>
 
               <div class="formControls">
                 <input class="context"
