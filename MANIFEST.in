@@ -1,2 +1,5 @@
 recursive-include communesplone *
 global-exclude *pyc
+include *.zcml
+recursive-include docs *.GPL
+recursive-include docs *.txt
