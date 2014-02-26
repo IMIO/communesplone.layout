@@ -1,6 +1,11 @@
 Changelog
 =========
 
+4.1.6.0dev (unreleased)
+-----------------------
+
+- Prepare release with zest.releaser
+
 3 (2013-08-28)
 --------------
 
