@@ -1,7 +1,7 @@
 Changelog
 =========
 
-433 (unreleased)
+433 (2014-07-22)
 ----------------
 - moved to Plone 4.3.3
   [gbastien]
