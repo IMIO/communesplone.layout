@@ -12,16 +12,24 @@ from Products.CMFPlone import PloneMessageFactory as _
 plone_utils=context.plone_utils
 
 if not send_to_address:
-    state.setError('send_to_address', _(u'Please submit an email address.'), 'email_required')
+    state.setError('send_to_address',
+                   _(u'Please submit an email address.'),
+                   'email_required')
 
 if not plone_utils.validateEmailAddresses(send_to_address):
-    state.setError('send_to_address', _(u'Please submit a valid email address.'), 'email_required')
+    state.setError('send_to_address',
+                   _(u'Please submit a valid email address.'),
+                   'email_required')
 
 if not send_from_address:
-    state.setError('send_from_address', _(u'Please submit an email address.'), 'email_required')
+    state.setError('send_from_address',
+                   _(u'Please submit an email address.'),
+                   'email_required')
 
 if not plone_utils.validateSingleEmailAddress(send_from_address):
-    state.setError('send_from_address', _(u'Please submit a valid email address.'), 'email_required')
+    state.setError('send_from_address',
+                   _(u'Please submit a valid email address.'),
+                   'email_required')
 
 captcha = context.REQUEST.get('captcha')
 captcha_result = context.restrictedTraverse('@@captcha').verify(captcha)
@@ -34,7 +42,8 @@ if not captcha_result:
     state.set(status='failure')
 
 if state.getErrors():
-    context.plone_utils.addPortalMessage(_(u'Please correct the indicated errors.'), 'error')
+    context.plone_utils.addPortalMessage(
+        _(u'Please correct the indicated errors.'), 'error')
     return state.set(status='failure')
 else:
     return state
