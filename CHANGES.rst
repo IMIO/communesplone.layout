@@ -1,6 +1,14 @@
 Changelog
 =========
 
+438 (unreleased)
+----------------
+- moved to Plone 4.3.8
+  [gbastien]
+- override the 'label_click_here_to_retrieve' translation to display a clear
+  message on the link to retrieve password when lost
+  [gbastien]
+
 433 (unreleased)
 ----------------
 - moved to Plone 4.3.3

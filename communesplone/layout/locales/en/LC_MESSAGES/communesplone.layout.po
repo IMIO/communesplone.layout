@@ -14,6 +14,20 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: ../skins/communesplone_layout/validate_sendto.vpy:31
+msgid "Please provide the message here above correctly, case sensitive."
+msgstr ""
+
+#. Default: "Provide the text in the image here above. Just to avoid spambots"
+#: ../skins/communesplone_layout/sendto_form.cpt
+msgid "help_captcha"
+msgstr ""
+
+#. Default: "Captcha"
+#: ../skins/communesplone_layout/sendto_form.cpt
+msgid "label_captcha"
+msgstr ""
+
 #. Default: "The connection to the site is temporary suspended for maintenance operations. <a href=\"contact-info\">Contact the site administrator</a> for more information."
 #: ./skins/communesplone_layout/login_form.cpt:162
 msgid "no_source_users"
