@@ -1,7 +1,7 @@
 Changelog
 =========
 
-4.3.8 (unreleased)
+4.3.8 (2017-02-02)
 ------------------
 - moved to Plone 4.3.8
   [gbastien]
