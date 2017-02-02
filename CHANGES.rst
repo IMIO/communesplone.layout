@@ -1,8 +1,8 @@
 Changelog
 =========
 
-438 (unreleased)
-----------------
+4.3.8 (unreleased)
+------------------
 - moved to Plone 4.3.8
   [gbastien]
 - override the 'label_click_here_to_retrieve' translation to display a clear
