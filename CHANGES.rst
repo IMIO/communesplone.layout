@@ -1,7 +1,7 @@
 Changelog
 =========
 
-4.3.8.1 (unreleased)
+4.3.8.1 (2017-05-17)
 --------------------
 
 - Adapted translation for 'label_by_author' from 'By {author}'
