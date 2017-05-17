@@ -4,7 +4,7 @@ Changelog
 4.3.8.1 (unreleased)
 --------------------
 
-- Adapted translation for 'label_by_author' from 'By {author}
+- Adapted translation for 'label_by_author' from 'By {author}'
   to 'Created by ${author}'.
   [gbastien]
 
