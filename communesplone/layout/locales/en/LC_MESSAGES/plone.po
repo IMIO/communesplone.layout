@@ -14,6 +14,13 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#. Default: "Created by ${author}"
+#: CMFPlone/skins/plone_content/folder_listing.pt:136
+#: CMFPlone/skins/plone_content/folder_summary_view.pt:73
+#: CMFPlone/skins/plone_deprecated/search.pt:172
+msgid "label_by_author"
+msgstr ""
+
 #. Default: "click here to retrieve it"
 #: CMFPlone/skins/plone_login/failsafe_login_form.cpt:123
 #: CMFPlone/skins/plone_login/login_form.cpt:288

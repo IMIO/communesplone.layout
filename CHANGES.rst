@@ -1,10 +1,12 @@
 Changelog
 =========
 
-4.3.9 (unreleased)
-------------------
+4.3.8.1 (unreleased)
+--------------------
 
-- Nothing changed yet.
+- Adapted translation for 'label_by_author' from 'By {author}
+  to 'Created by ${author}'.
+  [gbastien]
 
 
 4.3.8 (2017-02-02)

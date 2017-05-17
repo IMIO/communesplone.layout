@@ -18,3 +18,10 @@ msgstr ""
 #: plone.app.openid/plone/app/openid/skins/ploneopenid/login_form.cpt:151
 msgid "label_click_here_to_retrieve"
 msgstr ""
+
+#. Default: "Created by ${author}"
+#: CMFPlone/skins/plone_content/folder_listing.pt:136
+#: CMFPlone/skins/plone_content/folder_summary_view.pt:73
+#: CMFPlone/skins/plone_deprecated/search.pt:172
+msgid "label_by_author"
+msgstr ""
