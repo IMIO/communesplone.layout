@@ -3,7 +3,7 @@ Introduction
 
 This product is dedicated to override default plone layout.
 
-Adapted for plone 4.2.x and 4.3.15
+Adapted for plone 4.2.x and 4.3.15, 4.3.16, 4.3.17, 4.3.18
 
 For older versions, see http://svn.communesplone.org/svn/communesplone/communesplone.layout/tags/
 
