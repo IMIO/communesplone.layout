@@ -4,8 +4,8 @@ Changelog
 4.3.8.2 (unreleased)
 --------------------
 
-- Nothing changed yet.
-
+- Validated for Plone 4.3.15.
+  [gbastien]
 
 4.3.8.1 (2017-05-17)
 --------------------
