@@ -12,12 +12,12 @@
   <i18n:registerTranslations directory="locales" />
 
   <!-- make collective.captcha verify method callable in restricted python scripts -->
-  <browser:page
+  <!-- <browser:page
       name="cp_captcha"
       for="*"
       permission="zope2.View"
       class="collective.captcha.browser.captcha.Captcha"
       allowed_attributes="verify"
-      />
+      /> MIGRATION-PLONE6 (brings incompatible skimpyGimp) -->
 
 </configure>

@@ -31,7 +31,7 @@ setup(name='communesplone.layout',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'collective.captcha'
+          # 'collective.captcha'  # MIGRATION-PLONE6 (brings incompatible skimpyGimp)
       ],
       entry_points="""
       # -*- Entry points: -*-
