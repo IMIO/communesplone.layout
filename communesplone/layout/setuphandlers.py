@@ -19,7 +19,7 @@ def simplify(context):
     # Add a full-layout group
     groups_tool = site.portal_groups
     group_id = "full-layout"
-    if not group_id in groups_tool.getGroupIds():
+    if group_id not in groups_tool.getGroupIds():
         groups_tool.addGroup(group_id, title='Full edition layout')
         groups_tool.addPrincipalToGroup('Administrators', "full-layout")
         groups_tool.addPrincipalToGroup('Site Administrators', "full-layout")
