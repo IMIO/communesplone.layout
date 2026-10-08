@@ -33,6 +33,12 @@ setup(name='communesplone.layout',
           # -*- Extra requirements: -*-
           # 'collective.captcha'  # MIGRATION-PLONE6 (brings incompatible skimpyGimp)
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'plone.app.robotframework',
+          ],
+      },
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
