@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.3.15.2 (unreleased)
----------------------
+5.0.0 (unreleased)
+------------------
 
 - Plone 6.2 only (Python 3.10+), Plone 4 support dropped; package moved to the `src/` layout.
   [chris-adam]
