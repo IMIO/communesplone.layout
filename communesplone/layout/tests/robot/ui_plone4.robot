@@ -1,0 +1,149 @@
+*** Settings ***
+Documentation  Plone 4.3 keywords. Same keyword names and arguments as ui_plone6.robot.
+...            Robot Framework 3.0 syntax (Python 2 environment).
+...            Checked on Plone 4.3 (communesplone.layout phase 3): Log in with the login form and the keywords
+...            below The edit link is not available. The others are NOT CHECKED YET.
+Resource  plone/app/robotframework/selenium.robot
+Resource  plone/app/robotframework/keywords.robot
+Library  Remote  ${PLONE_URL}/RobotRemote
+
+
+*** Variables ***
+${MODAL}  css=div.overlay-ajax
+${ERROR_PAGE_TEXT}  there seems to be an error
+${NOT_FOUND_TEXT}  This page does not seem to exist
+# tabs of the edit form of a Document (Archetypes schemata labels)
+${FIRST_EDIT_TAB}  Default
+@{OTHER_EDIT_TABS}  Categorization  Dates  Creators  Settings
+
+
+*** Keywords ***
+Log in with the login form
+    [Documentation]  Real login (creates the user folder), unlike autologin
+    [Arguments]  ${username}  ${password}
+    Disable autologin
+    Go to  ${PLONE_URL}/login_form
+    Input text  css=#__ac_name  ${username}
+    Input password  css=#__ac_password  ${password}
+    Click button  css=input[name="submit"]
+    Wait until page contains element  css=#portal-personaltools
+
+Click the content action
+    [Documentation]  Item of the Actions menu (object_buttons), by action id
+    [Arguments]  ${action_id}
+    Click element  css=#plone-contentmenu-actions dt.actionMenuHeader a
+    Wait until element is visible  css=#plone-contentmenu-actions-${action_id}
+    Click element  css=#plone-contentmenu-actions-${action_id}
+
+The content action is available
+    [Arguments]  ${action_id}  ${expected}=${True}
+    Click element  css=#plone-contentmenu-actions dt.actionMenuHeader a
+    Wait until element is visible  css=#plone-contentmenu-actions dd.actionMenuContent
+    Run keyword if  ${expected}
+    ...  Page should contain element  css=#plone-contentmenu-actions-${action_id}
+    ...  ELSE  Page should not contain element  css=#plone-contentmenu-actions-${action_id}
+
+Open the add menu
+    Click element  css=#plone-contentmenu-factories dt.actionMenuHeader a
+    Wait until element is visible  css=#plone-contentmenu-factories dd.actionMenuContent
+
+The personal action links to
+    [Documentation]  Item of the user menu (user actions), by action id
+    [Arguments]  ${action_id}  ${url}
+    Element attribute value should be  css=#personaltools-${action_id} a  href  ${url}
+
+The personal action is not available
+    [Arguments]  ${action_id}
+    Page should not contain element  css=#personaltools-${action_id}
+
+The modal is open
+    [Documentation]  Overlay (Plone 4) or modal (Plone 6) showing a form
+    Wait until element is visible  ${MODAL} form
+
+Modal element
+    [Documentation]  Locator of the element with this id inside the modal
+    ...              (an argument starting with # would be a robot comment)
+    [Arguments]  ${id}
+    [Return]  ${MODAL} [id="${id}"]
+
+Save the modal
+    Click button  ${MODAL} #form-buttons-save
+
+Cancel the modal
+    Click button  ${MODAL} #form-buttons-cancel
+
+The modal is closed
+    Wait until element is not visible  ${MODAL}
+
+The status message contains
+    [Arguments]  ${text}
+    Wait until element contains  css=.portalMessage  ${text}
+
+The page is not an error
+    Page should not contain  ${ERROR_PAGE_TEXT}
+
+The page is not found
+    Page should contain  ${NOT_FOUND_TEXT}
+
+The edit link is not available
+    Page should not contain element  css=#contentview-edit
+
+The element is visible
+    [Documentation]  Visible, or (expected False) hidden or absent
+    [Arguments]  ${locator}  ${expected}=${True}
+    Run keyword if  ${expected}  Element should be visible  ${locator}
+    ...  ELSE  Element should not be visible  ${locator}
+
+The user is logged in
+    Page should contain element  css=#personaltools-logout
+    Page should not contain element  css=#personaltools-login
+
+Open the login page
+    Go to  ${PLONE_URL}/login_form
+
+The password field is visible
+    [Arguments]  ${expected}=${True}
+    The element is visible  css=#__ac_password  ${expected}
+
+The forgotten password link is visible
+    [Arguments]  ${expected}=${True}
+    The element is visible  css=#login-forgotten-password a  ${expected}
+
+The actions menu is visible
+    [Arguments]  ${expected}=${True}
+    The element is visible  css=#plone-contentmenu-actions  ${expected}
+
+The sharing tab is visible
+    [Arguments]  ${expected}=${True}
+    The element is visible  css=#contentview-local_roles  ${expected}
+
+The display menu is visible
+    [Arguments]  ${expected}=${True}
+    The element is visible  css=#plone-contentmenu-display  ${expected}
+
+Open the edit form
+    [Documentation]  Edit form of an Archetypes content (tabs built by form_tabbing.js)
+    [Arguments]  ${url}
+    Go to  ${url}/edit
+    Wait until page contains element  css=ul.formTabs
+
+The edit form tab is visible
+    [Documentation]  Tab of the edit form, by label: shown, or (expected False) in the page but hidden
+    [Arguments]  ${label}  ${expected}=${True}
+    ${locator}=  Set variable  xpath=//ul[contains(@class, "formTabs")]//a[normalize-space()="${label}"]
+    Page should contain element  ${locator}
+    The element is visible  ${locator}  ${expected}
+
+Open the send-to form
+    [Arguments]  ${url}
+    Go to  ${url}/sendto_form
+
+The captcha is asked
+    Element should be visible  css=input[name="captcha"]
+    Page should contain image  css=img[src$="/@@captcha/image"]
+
+Send the page
+    [Arguments]  ${send_to_address}  ${captcha}
+    Input text  css=#send_to_address  ${send_to_address}
+    Input text  css=input[name="captcha"]  ${captcha}
+    Click button  css=input[name="form.button.Send"]
