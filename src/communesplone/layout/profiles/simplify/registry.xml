@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<registry>
+  <!-- simplify.css for the authenticated users that are not Manager nor in the full-layout group -->
+  <records interface="plone.base.interfaces.IBundleRegistry"
+           prefix="plone.bundles/communesplone-layout-simplify">
+    <value key="enabled">True</value>
+    <value key="csscompilation">++plone++communesplone.layout/simplify.css</value>
+    <value key="expression">python: not portal.portal_membership.isAnonymousUser() and not context.portal_membership.getAuthenticatedMember().has_role('Manager') and not 'full-layout' in context.portal_membership.getAuthenticatedMember().getGroups()</value>
+  </records>
+</registry>

@@ -18,5 +18,6 @@ lib64
 local/
 parts/
 share/
-src/
+src/*
+!src/communesplone
 var/

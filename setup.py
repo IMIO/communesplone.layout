@@ -1,4 +1,6 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from setuptools import setup
+
 
 version = "4.3.15.2.dev0"
 
@@ -14,21 +16,30 @@ setup(
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
+        "Framework :: Plone :: 6.2",
+        "Framework :: Plone :: Addon",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     keywords="",
     author="CommunesPlone.org",
     author_email="support@communesplone.be",
-    url="http://svn.communesplone.org/svn/communesplone/communesplone.layout",
+    url="https://github.com/IMIO/communesplone.layout",
     license="GPL",
-    packages=find_packages(exclude=["ez_setup"]),
-    namespace_packages=["communesplone"],
+    packages=find_packages("src", exclude=["ez_setup"]),
+    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
+    python_requires=">=3.10",
     install_requires=[
         "setuptools",
-        # -*- Extra requirements: -*-
-        # 'collective.captcha'  # MIGRATION-PLONE6 (brings incompatible skimpyGimp)
+        "plone.base",
+        "Products.CMFPlone",
+        "Products.GenericSetup",
+        "Products.PluggableAuthService",
     ],
     extras_require={
         "test": [
