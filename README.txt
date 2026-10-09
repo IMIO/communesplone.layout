@@ -1,3 +1,8 @@
+.. image:: https://github.com/IMIO/communesplone.layout/actions/workflows/main.yml/badge.svg
+    :target: https://github.com/IMIO/communesplone.layout/actions/workflows/main.yml
+.. image:: https://coveralls.io/repos/github/IMIO/communesplone.layout/badge.svg
+    :target: https://coveralls.io/github/IMIO/communesplone.layout
+
 Introduction
 ============
 
