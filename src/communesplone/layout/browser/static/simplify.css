@@ -1,0 +1,8 @@
+#plone-contentmenu-actions, #workflow-transition-advanced {
+    display: none !important;
+}
+
+/* edit forms: every tab but the first (autotoc nav), versioning comment */
+#form nav.autotoc-nav > a:nth-child(n+2), #formfield-form-widgets-IVersionable-changeNote {
+    display: none !important;
+}

@@ -1,10 +1,19 @@
 Changelog
 =========
 
-4.3.15.2 (unreleased)
----------------------
+5.0.0 (unreleased)
+------------------
 
-- Nothing changed yet.
+- Plone 6.2 only (Python 3.10+), Plone 4 support dropped; package moved to the `src/` layout.
+  [chris-adam]
+- Skin layers removed: maintenance message on the `@@login` / `@@login_form` views (browser layer), new `uninstall` profile.
+  [chris-adam]
+- Send-to form captcha removed (collective.captcha dropped).
+  [chris-adam]
+- `simplify` profile: `simplify.css` is a bundle for Plone 6 markup, group and permissions set by a post handler.
+  [chris-adam]
+- Added unit and robot tests, Plone 6.2 buildout and GitHub Actions.
+  [chris-adam]
 
 
 4.3.15.1 (2020-02-25)
