@@ -1,0 +1,6 @@
+[report]
+include =
+    src/communesplone/*
+omit =
+    */test*
+    src/communesplone/__init__.py

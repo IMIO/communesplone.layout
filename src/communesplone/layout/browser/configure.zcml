@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+  <!-- maintenance message instead of the login form when source_users is deactivated -->
+  <browser:page
+      name="login"
+      for="plone.base.interfaces.INavigationRoot"
+      class=".login.LoginForm"
+      permission="zope.Public"
+      layer="..interfaces.ICommunesploneLayoutLayer"
+      />
+  <browser:page
+      name="login_form"
+      for="plone.base.interfaces.INavigationRoot"
+      class=".login.LoginForm"
+      permission="zope.Public"
+      layer="..interfaces.ICommunesploneLayoutLayer"
+      />
+
+  <!-- simplify.css: bundle of the simplify profile (++plone++communesplone.layout/simplify.css) -->
+  <plone:static directory="static" type="plone" name="communesplone.layout" />
+
+</configure>

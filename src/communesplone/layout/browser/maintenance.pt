@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="communesplone.layout"
+      metal:use-macro="context/@@main_template/macros/master">
+<body>
+  <metal:main fill-slot="main">
+    <div id="content-core">
+      <p id="no_plugin" style="font-weight:bold;" i18n:translate="no_source_users">The connection to the site is temporary suspended for maintenance operations. <a href="contact-info">Contact the site administrator</a> for more information.</p>
+    </div>
+  </metal:main>
+</body>
+</html>
