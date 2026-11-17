@@ -14,6 +14,8 @@ Changelog
   [chris-adam]
 - Added unit and robot tests, Plone 6.2 buildout and GitHub Actions.
   [chris-adam]
+- Dropped support for Plone versions below 6.2.
+  [chris-adam]
 
 
 4.3.15.1 (2020-02-25)
